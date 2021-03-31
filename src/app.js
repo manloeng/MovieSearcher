@@ -8,21 +8,19 @@ import Discover from "./pages/discover";
 
 import "./css/app.css";
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <Router>
-        <PageContainer>
-          <SideNavBar {...this.props} />
-          <ContentWrapper>
-            <Switch>
-              <Route path="/discover" component={Discover} {...this.props} />
-            </Switch>
-          </ContentWrapper>
-        </PageContainer>
-      </Router>
-    );
-  }
+export default function App(props) {
+  return (
+    <Router>
+      <PageContainer>
+        <SideNavBar {...props} />
+        <ContentWrapper>
+          <Switch>
+            <Route path="/discover" component={Discover} {...props} />
+          </Switch>
+        </ContentWrapper>
+      </PageContainer>
+    </Router>
+  );
 }
 
 const ContentWrapper = styled.main`
