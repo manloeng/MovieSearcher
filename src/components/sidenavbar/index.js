@@ -40,7 +40,7 @@ export default function SideNavBar() {
     <>
       {showBurger && !isOpen && (
         <div>
-          <button onClick={() => setIsOpen(!isOpen)}>
+          <button onClick={() => setIsOpen(true)}>
             <BurgerIcon src="/images/burger.png" alt="hamburger menu"></BurgerIcon>
           </button>
           <span>
