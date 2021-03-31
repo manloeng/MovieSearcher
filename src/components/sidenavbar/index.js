@@ -51,6 +51,12 @@ export default function SideNavBar() {
 
       {showMenu && (
         <SideNavBarCont className={isOpen ? "visible" : ""}>
+          {showBurger && isOpen && (
+            <button onClick={() => setIsOpen(false)}>
+              Close
+              {/* <CrossIcon></CrossIcon> */}
+            </button>
+          )}
           <SideNavMainLink className="menu_nav_link main_nav_link" to="/" exact>
             Wesley
             <NavIcon>{/* <img src={Arrow} alt="Account Information"></img> */}</NavIcon>
@@ -84,6 +90,12 @@ export default function SideNavBar() {
 }
 
 const BurgerIcon = styled.img`
+  height: 25px;
+  width: 25px;
+  border: 0;
+`;
+
+const CrossIcon = styled.img`
   height: 25px;
   width: 25px;
   border: 0;
