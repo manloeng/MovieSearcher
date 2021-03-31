@@ -1,17 +1,16 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export default class CheckBox extends React.Component {
-  // Create a custom checkbox component
-  
-  render () {
-    return (
-      <CheckboxCont>
-      </CheckboxCont>
-    )
-  }
+export default function CheckBox({ genres = [] }) {
+  return (
+    <CheckboxCont>
+      {genres.map((genre) => (
+        <li key={genre.name}>{genre.name}</li>
+      ))}
+    </CheckboxCont>
+  );
 }
 
-const CheckboxCont = styled.div`
+const CheckboxCont = styled.ul`
   position: relative;
-`
+`;

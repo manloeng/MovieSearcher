@@ -1,16 +1,36 @@
-import React from "react";
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 
 import Checkbox from "../checkbox";
 
-export default class ExpandableFilter extends React.Component {
-  constructor (props) {
-    super(props);
+export default function ExpandableFilter({ genres = [] }) {
+  const [filtersShown, setFiltersShown] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-    this.state = {
-      filtersShown: false
-    };
-  }
+  React.useEffect(() => {
+    function handleResize() {
+      const isMobile = window.innerWidth < 768;
+      setIsMobile(isMobile);
+    }
 
-  // You need to create your own checkbox component with a custom checkmark
+    window.addEventListener("resize", handleResize);
+  });
+
+  return (
+    <>
+      {isMobile && (
+        <button onClick={() => setFiltersShown(!filtersShown)}>
+          <FilterIcon src="/images/filter-icon.png" alt="hamburger menu"></FilterIcon>
+        </button>
+      )}
+      {isMobile && filtersShown && <Checkbox genres={genres}></Checkbox>}
+
+      {!isMobile && <Checkbox genres={genres}></Checkbox>}
+    </>
+  );
 }
+
+const FilterIcon = styled.img`
+  height: 25px;
+  width: 25px;
+`;
