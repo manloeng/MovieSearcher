@@ -3,9 +3,10 @@ import styled from "styled-components";
 
 export default function MovieItem({ movie }) {
   return (
-    // Complete the MovieItem component
-    <MovieItemWrapper key={movie.title}>
-      <LeftCont></LeftCont>
+    <MovieItemWrapper key={movie.id}>
+      <LeftCont>
+        <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="movie images"></img>
+      </LeftCont>
       <RightCont></RightCont>
     </MovieItemWrapper>
   );
