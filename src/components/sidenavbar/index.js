@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import styled, { css } from "styled-components";
-import { NavLink as Link } from "react-router-dom";
+import styled from "styled-components";
+import { NavLink as Link, useLocation } from "react-router-dom";
 
 import * as colors from "../../colors";
 // import Arrow from "../../images/arrow-icon.png";
 // import SearchWhite from "../../images/search-icon-white.png";
 
 export default function SideNavBar() {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [showBurger, setShowBurger] = useState(false);
   const [dimensions, setDimensions] = React.useState({
@@ -28,6 +29,10 @@ export default function SideNavBar() {
   useEffect(() => {
     window.innerWidth < 768 ? setShowBurger(true) : setShowBurger(false);
   }, [dimensions]);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
 
   const showMenu = (showBurger && isOpen) || !showBurger;
 
