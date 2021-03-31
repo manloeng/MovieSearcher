@@ -3,8 +3,8 @@ import styled, { css } from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 
 import * as colors from "../../colors";
-import Arrow from "../../images/arrow-icon.png";
-import SearchWhite from "../../images/search-icon-white.png";
+// import Arrow from "../../images/arrow-icon.png";
+// import SearchWhite from "../../images/search-icon-white.png";
 
 export default function SideNavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,15 +48,11 @@ export default function SideNavBar() {
         <SideNavBarCont className={isOpen ? "visible" : ""}>
           <SideNavMainLink className="menu_nav_link main_nav_link" to="/" exact>
             Wesley
-            <NavIcon>
-              <img src={Arrow} alt="Account Information"></img>
-            </NavIcon>
+            <NavIcon>{/* <img src={Arrow} alt="Account Information"></img> */}</NavIcon>
           </SideNavMainLink>
           <SideNavMainLink className="menu_nav_link" to="/discover">
             Discover
-            <NavIcon>
-              <img src={SearchWhite} alt="Search Movie List"></img>
-            </NavIcon>
+            <NavIcon>{/* <img src={SearchWhite} alt="Search Movie List"></img> */}</NavIcon>
           </SideNavMainLink>
           <SideNavHeader>
             <HeaderText>Watched</HeaderText>
