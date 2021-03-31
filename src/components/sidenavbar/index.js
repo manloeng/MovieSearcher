@@ -95,11 +95,11 @@ const BurgerIcon = styled.img`
   border: 0;
 `;
 
-const CrossIcon = styled.img`
-  height: 25px;
-  width: 25px;
-  border: 0;
-`;
+// const CrossIcon = styled.img`
+//   height: 25px;
+//   width: 25px;
+//   border: 0;
+// `;
 
 const SideNavBarCont = styled.div`
   position: fixed;
