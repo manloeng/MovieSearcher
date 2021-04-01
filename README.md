@@ -1,37 +1,72 @@
-# cord Coding Challenge (Front-end)
+# TMDb
 
-### Introduction 
-Welcome! This coding challenge is designed to explore your React & SCSS frontend skills. You will have to create a simple SPA based off the provided mockup and make a few API calls to a public web API.
+A simple web app for The Movie DB written in Javascript
 
-### The challenge
-You have to complete the test and write any necessary code so that the discover page looks like this [mockup] designs. All the images/icons you need are already imported and you can find them under the images folder. 
+# The Mission
 
-The discover page should enable the user to search for movies as keywords are typed into the search bar. Functionality for filtering does not need to be implemented, however the filter categories should still be expandable/collapsable upon clicking. On mobile devices, the navigation bar should slide in from left to right when the user clicks on the hamburger icon, and back when the user clicks on a close icon or outside the SideBar. In addition, you have to add all the responsive stylesheets for the app to run smoothly on mobile devices.
+The 2 main user features that are currently included in this app are the ability to:
 
-Movie data can be queried via: 
-- [theMovieDB]
+- Search for movies via the Discovery route
+- See basic details of a movie
 
-Packages & Technologies used in the repo:
-- `axios`
-- `node-sass`
-- `react-router-dom`
-- `styled-components`
+# How to run this app locally
 
-### Submission guide
-Please fork this repo and drop your contact person a note once you are done
+## Step 1 - Setting up your own repository
 
-### How we review
-- **Design**: Were you able to translate the mockup into a web application that works well on various browsers and devices? Does the output match the mockup? Are all the required interactions implemented? This is the most important aspect. Weight: 50%
-- **Functionality**: Does the search function work? Do the results load instantly as the user types? If the API backend has rate limiting enforced, how do you implement the aforementioned while also taking rate limiting into account? Weight: 25%
-- **Code quality**: Is the code easy to understand and maintain? Is the coding style consistent with the language's best practices? Do you demonstrate a good grasp of JavaScript, especially ES6? Weight: 15%
-- **Performance**: Does the UI render quickly? Are the choice of libraries etc appropriate for the web page? Weight: 10%
+Clone the repo:
 
-### Bonus points
-- **Automated Tests** - Are there any automated frontend tests?
-- **Documentation** - Is the README well written? Are the commit messages clear?
-- **Reporting** - React Profiler report with demonstrated knowledge of reading / reporting performance data 
-- **Production-readiness** - Is there proper error handling? Is the code ready to put into production? Code-Splitting?
-- **Future-readiness** - React Hooks? Web workers? PWA? Client-side caching?
+```
+git clone https://github.com/manloeng/MovieSearcher
+```
 
-[mockup]: <https://cord-coding-challenges.s3-eu-west-1.amazonaws.com/frontend-test-mockups.zip>
-[theMovieDB]: <https://www.themoviedb.org/documentation/api>
+Once you have cloned the repo, you should have the repo on your system.
+
+You will need to install the required modules to run the app successfully.
+
+## Step 2 - Installation
+
+On your terminal you will want to run:
+
+```
+npm install
+```
+
+or
+
+```
+yarn
+```
+
+This will install all the modules that are listed in the package.json
+
+# Step 3 - Running on an Environment
+
+Once you have the modules installed, you can run the app via npm/yarn depending on how you installed the dependencies:
+
+```
+npm start
+```
+
+or
+
+```
+yarn start
+```
+
+# Step 4 - Using the App
+
+Once you have started the app, you will be taken straight to the app.
+
+** Currently Only the discover route is available **
+
+# Todo List
+
+- Improve Styling mobile/ web app to correctly mimic wireframe
+- Add tests using jest and enzyme
+- Refactoring of code - Use Context to pass information around (ex - from discover to search bar component)
+- Potential to add state management to cache data - Redux
+- Populate the movie cards/items with movie data
+- Improve performance - properly resize images returned using canvas?
+- Add react-windows virtualise the down to speed up rendering of components - should only render the items that are on screen
+- Convert bullet points to checkboxs - (was initially getting a null input err when using <input type="checkbox>)
+- Apply colour scheme provided
