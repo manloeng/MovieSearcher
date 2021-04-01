@@ -7,3 +7,7 @@ export async function getMoviesByPopulatrity(pageNumber) {
 export async function getGenreList() {
   return await axios.get(`${baseUrl}/genre/movie/list?api_key=${api_key}`);
 }
+
+export async function getMoviesViaInput(query) {
+  return await axios.get(`${baseUrl}/search/movie?api_key=${api_key}&query=${query}`);
+}
