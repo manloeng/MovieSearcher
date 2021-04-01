@@ -39,7 +39,20 @@ yarn
 
 This will install all the modules that are listed in the package.json
 
-# Step 3 - Running on an Environment
+## Step 3 - Update the secret.example.json
+
+You will need to add your own API Key in order to access this app.
+You can get this from signing up to The Movie DB:
+
+https://www.themoviedb.org/settings/api
+
+example:
+
+```
+"api_key": "1234abcd"
+```
+
+# Step 4 - Running on an Environment
 
 Once you have the modules installed, you can run the app via npm/yarn depending on how you installed the dependencies:
 
