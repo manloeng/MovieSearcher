@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
+import { debounce } from "lodash";
 
-import * as colors from "../../colors";
-import { getMoviesByPopulatrity, getGenreList } from "../../fetcher";
+// import * as colors from "../../colors";
+import { getMoviesByPopulatrity, getGenreList, getMoviesViaInput } from "../../fetcher";
 
 import SearchFilters from "../../components/searchfilter";
 import MovieList from "../../components/movielist";
 
 export default function Discover() {
-  const [keyword, setKeyword] = useState("");
-  const [year, setYear] = useState(0);
+  // const [keyword, setKeyword] = useState("");
+  // const [year, setYear] = useState(0);
   const [results, setResults] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
   const [genreOptions, setGenreOptions] = useState([]);
+  const [name, setName] = useState("");
 
   const ratingOptions = [
     { id: 7.5, name: 7.5 },
@@ -49,6 +51,19 @@ export default function Discover() {
     fetchGenreList();
   }, []);
 
+  const fetchMoviesViaInput = useCallback(
+    debounce(async (name) => {
+      const { data } = await getMoviesViaInput(name);
+      setResults(data.results);
+    }, 1000),
+    []
+  );
+
+  const handleChange = (event) => {
+    setName(event.target.value);
+    fetchMoviesViaInput(event.target.value);
+  };
+
   return (
     <DiscoverWrapper>
       <MobilePageTitle>Discover</MobilePageTitle>{" "}
@@ -57,7 +72,8 @@ export default function Discover() {
           genres={genreOptions}
           ratings={ratingOptions}
           languages={languageOptions}
-          searchMovies={(keyword, year) => searchMovies(keyword, year)}
+          handleChange={handleChange}
+          name={name}
         />
       </MovieFilters>
       <MovieResults>
@@ -81,5 +97,3 @@ const MovieResults = styled.div``;
 const MovieFilters = styled.div``;
 
 const MobilePageTitle = styled.header``;
-
-function searchMovies() {}

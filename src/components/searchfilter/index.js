@@ -1,15 +1,15 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import * as colors from "../../colors";
+// import * as colors from "../../colors";
 import ExpandableFilter from "../../components/expandablefilter";
 import SearchBar from "../../components/searchbar";
 
-export default function SearchFilters({ genres = [], ratings = [], languages = [], searchMovies }) {
+export default function SearchFilters({ genres = [], ratings = [], languages = [], handleChange, name }) {
   return (
     <FiltersWrapper>
       <SearchFiltersCont className="search_inputs_cont" marginBottom>
-        {/* Implement a "SearchBar" component and re-use it for the keyword and the year inputs */}
+        <SearchBar handleChange={handleChange} name={name}></SearchBar>
       </SearchFiltersCont>
       <SearchFiltersCont>
         <CategoryTitle>Movies</CategoryTitle>
