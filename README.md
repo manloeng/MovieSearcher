@@ -46,6 +46,8 @@ You can get this from signing up to The Movie DB:
 
 https://www.themoviedb.org/settings/api
 
+Once you have signed up, please rename the `secret.example.json` file to `secret.json` and change the api key
+
 example:
 
 ```
@@ -83,3 +85,4 @@ Once you have started the app, you will be taken straight to the app.
 - Add react-windows virtualise the down to speed up rendering of components - should only render the items that are on screen
 - Convert bullet points to checkboxs - (was initially getting a null input err when using <input type="checkbox>)
 - Apply colour scheme provided
+- Go through `Lighthouse` improvements
