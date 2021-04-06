@@ -15,6 +15,8 @@ export default function SideNavBar() {
     width: window.innerWidth,
   });
 
+  const currentPath = location.pathname;
+
   React.useEffect(() => {
     function handleResize() {
       setDimensions({
@@ -32,7 +34,7 @@ export default function SideNavBar() {
 
   useEffect(() => {
     setIsOpen(false);
-  }, [location.pathname]);
+  }, [currentPath]);
 
   const showMenu = (showBurger && isOpen) || !showBurger;
 
@@ -43,9 +45,11 @@ export default function SideNavBar() {
           <button onClick={() => setIsOpen(true)}>
             <BurgerIcon src="/images/burger.png" alt="hamburger menu"></BurgerIcon>
           </button>
-          <span>
-            <h1>Discover</h1>
-          </span>
+          {currentPath === "/discover" && (
+            <span>
+              <h1>Discover</h1>
+            </span>
+          )}
         </div>
       )}
 
