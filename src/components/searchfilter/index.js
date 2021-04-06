@@ -12,7 +12,7 @@ export default function SearchFilters({ genres = [], ratings = [], languages = [
         <SearchBar handleChange={handleChange} name={name}></SearchBar>
       </SearchFiltersCont>
       <SearchFiltersCont>
-        <CategoryTitle>Movies</CategoryTitle>
+        {/* <CategoryTitle>Movies</CategoryTitle> */}
         <ExpandableFilter genres={genres}></ExpandableFilter>
       </SearchFiltersCont>
     </FiltersWrapper>
@@ -20,6 +20,7 @@ export default function SearchFilters({ genres = [], ratings = [], languages = [
 }
 
 const FiltersWrapper = styled.div`
+  display: flex;
   position: relative;
 `;
 
