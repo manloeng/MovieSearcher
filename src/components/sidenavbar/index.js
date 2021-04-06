@@ -61,10 +61,12 @@ export default function SideNavBar() {
             Wesley
             <NavIcon>{/* <img src={Arrow} alt="Account Information"></img> */}</NavIcon>
           </SideNavMainLink>
-          <SideNavMainLink className="menu_nav_link" to="/discover">
-            Discover
-            <NavIcon>{/* <img src={SearchWhite} alt="Search Movie List"></img> */}</NavIcon>
-          </SideNavMainLink>
+          <DiscoverText>
+            <SideNavMainLink className="menu_nav_link" to="/discover">
+              Discover
+              <NavIcon>{/* <img src={SearchWhite} alt="Search Movie List"></img> */}</NavIcon>
+            </SideNavMainLink>
+          </DiscoverText>
           <SideNavHeader>
             <HeaderText>Watched</HeaderText>
           </SideNavHeader>
@@ -135,4 +137,9 @@ const HeaderText = styled.div``;
 
 const NavLink = styled(Link)`
   display: block;
+`;
+
+const DiscoverText = styled.div`
+  margin: 15px 0;
+  background-color: ${colors.primaryColor};
 `;
