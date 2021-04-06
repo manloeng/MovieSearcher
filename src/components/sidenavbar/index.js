@@ -41,16 +41,16 @@ export default function SideNavBar() {
   return (
     <>
       {showBurger && !isOpen && (
-        <div>
+        <BurgerMenu>
           <button onClick={() => setIsOpen(true)}>
             <BurgerIcon src="/images/burger.png" alt="hamburger menu"></BurgerIcon>
           </button>
           {currentPath === "/discover" && (
-            <span>
+            <Spacing>
               <h1>Discover</h1>
-            </span>
+            </Spacing>
           )}
-        </div>
+        </BurgerMenu>
       )}
 
       {showMenu && (
@@ -94,6 +94,14 @@ export default function SideNavBar() {
     </>
   );
 }
+
+const BurgerMenu = styled.div`
+  display: flex;
+`;
+
+const Spacing = styled.span`
+  margin-left: 1rem;
+`;
 
 const BurgerIcon = styled.img`
   height: 25px;
