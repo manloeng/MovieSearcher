@@ -66,7 +66,7 @@ export default function Discover() {
 
   return (
     <DiscoverWrapper>
-      <MobilePageTitle>Discover</MobilePageTitle>{" "}
+      {/* <MobilePageTitle>Discover</MobilePageTitle> */}
       <MovieFilters>
         <SearchFilters
           genres={genreOptions}
