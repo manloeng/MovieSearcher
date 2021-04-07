@@ -76,13 +76,21 @@ Once you have started the app, you will be taken straight to the app.
 
 # Todo List
 
-- Improve Styling mobile/ web app to correctly mimic wireframe
-- Add tests using jest and enzyme
-- Refactoring of code - Use Context to pass information around (ex - from discover to search bar component)
-- Potential to add state management to cache data - Redux
+- Add tests using jest and enzyme/cypress
 - Populate the movie cards/items with movie data
 - Improve performance - properly resize images returned using canvas?
 - Add react-windows virtualise the down to speed up rendering of components - should only render the items that are on screen
 - Convert bullet points to checkboxs - (was initially getting a null input err when using <input type="checkbox>)
 - Apply colour scheme provided
 - Go through `Lighthouse` improvements
+
+## Improve Styling mobile/ web app to correctly mimic wireframe:
+- Mobile: Filtering movies doesn't look good, shouldn't be part of the search bar and filter icon
+- Icons doesn't look like they are blended into the white background, png issue?
+- Web: Searchbar and filtering movies needs to be seperated - linking to mobile issue
+- Text on navbar is quite hard to read - Needs a better colour - UX
+
+## Refactoring:
+- Handling of resizing between mobile and web seems to overload the sidenav and filter option (code is being repeated quite often) - this seems like it should be refactored to make cleaner (Keep DRY)
+- Refactoring of code - Use Context to pass information around (ex - from discover to search bar component)
+- Potential to add state management to cache data - Redux
